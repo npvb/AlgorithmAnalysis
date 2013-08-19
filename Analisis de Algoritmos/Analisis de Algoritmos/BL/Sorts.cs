@@ -9,67 +9,95 @@ namespace Analisis_de_Algoritmos.BL
     {
         public Sorts() 
         {
-        
+            
         }
 
-      public String[] InsertionSort(String[] objetoComparar) 
+        private int size = 1;
+       // private int[] sortingArray = new int [size];
+        List<int> sortingArray = new List<int>();
+
+        public List<int> SortingArray   
+        {
+            get
+            {
+                return sortingArray;
+            }
+            set 
+            {
+                sortingArray = value;
+            }
+        }
+
+        public int ArraySize
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size= value;
+            }
+        }
+
+        public void InsertionSort() 
         {
             int i, j;
 
-            for (i = 1; i < objetoComparar.Length; i++)
+            for (i = 1; i < sortingArray.Count(); i++)
             {
-                String value = objetoComparar[i];
+                int value = sortingArray[i];
                 j = i - 1;
-                while ((j >= 0) && (objetoComparar[j].CompareTo(value) > 0))
+                while ((j >= 0) && (sortingArray[j].CompareTo(value) > 0))
                 {
-                    objetoComparar[j + 1] = objetoComparar[j];
+                    sortingArray[j + 1] = sortingArray[j];
                     j--;
                 }
-                objetoComparar[j + 1] = value;
+                sortingArray[j + 1] = value;
             }
-            return objetoComparar;
+            ///return sortingArray;
         }
 
-      public static void Quicksort(IComparable[] elements, int left, int right)
-      {
-          int i = left, j = right;
-          IComparable pivot = elements[(left + right) / 2];
+        public void Quicksort(IComparable[] elements, int left, int right)
+         {
+              int i = left, j = right;
+              IComparable pivot = elements[(left + right) / 2];
 
-          while (i <= j)
-          {
-              while (elements[i].CompareTo(pivot) < 0)
+              while (i <= j)
               {
-                  i++;
+                  while (elements[i].CompareTo(pivot) < 0)
+                  {
+                      i++;
+                  }
+
+                  while (elements[j].CompareTo(pivot) > 0)
+                  {
+                      j--;
+                  }
+
+                  if (i <= j)
+                  {
+                      // Swap
+                      IComparable tmp = elements[i];
+                      elements[i] = elements[j];
+                      elements[j] = tmp;
+
+                      i++;
+                      j--;
+                  }
               }
 
-              while (elements[j].CompareTo(pivot) > 0)
+              // Recursive calls
+              if (left < j)
               {
-                  j--;
+                  Quicksort(elements, left, j);
               }
 
-              if (i <= j)
+              if (i < right)
               {
-                  // Swap
-                  IComparable tmp = elements[i];
-                  elements[i] = elements[j];
-                  elements[j] = tmp;
-
-                  i++;
-                  j--;
+                  Quicksort(elements, i, right);
               }
-          }
-
-          // Recursive calls
-          if (left < j)
-          {
-              Quicksort(elements, left, j);
-          }
-
-          if (i < right)
-          {
-              Quicksort(elements, i, right);
-          }
-      }
+        }
 
 
 

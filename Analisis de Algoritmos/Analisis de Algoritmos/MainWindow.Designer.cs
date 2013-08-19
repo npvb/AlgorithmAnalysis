@@ -38,15 +38,17 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ArraySizeErrorLabel = new System.Windows.Forms.Label();
+            this.arraySizeLbl = new System.Windows.Forms.Label();
+            this.arraySize = new System.Windows.Forms.ComboBox();
             this.Solution = new System.Windows.Forms.TextBox();
-            this.RandomChoice = new System.Windows.Forms.RadioButton();
-            this.ListChoice = new System.Windows.Forms.RadioButton();
-            this.listado = new System.Windows.Forms.TextBox();
             this.Solve = new System.Windows.Forms.Button();
+            this.listado = new System.Windows.Forms.TextBox();
+            this.ListChoice = new System.Windows.Forms.RadioButton();
+            this.RandomChoice = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AlgorithmTreeView
@@ -61,7 +63,7 @@
             treeNode3.Text = "Sorts";
             this.AlgorithmTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3});
-            this.AlgorithmTreeView.Size = new System.Drawing.Size(136, 414);
+            this.AlgorithmTreeView.Size = new System.Drawing.Size(136, 323);
             this.AlgorithmTreeView.TabIndex = 0;
             this.AlgorithmTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.AlgorithmTreeView_AfterSelect);
             // 
@@ -71,7 +73,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(883, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(855, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -92,6 +94,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.ArraySizeErrorLabel);
+            this.panel1.Controls.Add(this.arraySizeLbl);
+            this.panel1.Controls.Add(this.arraySize);
+            this.panel1.Controls.Add(this.Solution);
             this.panel1.Controls.Add(this.Solve);
             this.panel1.Controls.Add(this.listado);
             this.panel1.Controls.Add(this.ListChoice);
@@ -99,37 +105,83 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(144, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(727, 414);
+            this.panel1.Size = new System.Drawing.Size(700, 323);
             this.panel1.TabIndex = 2;
             // 
-            // groupBox1
+            // ArraySizeErrorLabel
             // 
-            this.groupBox1.Controls.Add(this.Solution);
-            this.groupBox1.Location = new System.Drawing.Point(4, 270);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(720, 144);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Solution";
+            this.ArraySizeErrorLabel.AutoSize = true;
+            this.ArraySizeErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.ArraySizeErrorLabel.Location = new System.Drawing.Point(228, 45);
+            this.ArraySizeErrorLabel.Name = "ArraySizeErrorLabel";
+            this.ArraySizeErrorLabel.Size = new System.Drawing.Size(146, 13);
+            this.ArraySizeErrorLabel.TabIndex = 7;
+            this.ArraySizeErrorLabel.Text = "**Escoga Tamaño del Arreglo";
+            this.ArraySizeErrorLabel.Visible = false;
+            // 
+            // arraySizeLbl
+            // 
+            this.arraySizeLbl.AutoSize = true;
+            this.arraySizeLbl.Location = new System.Drawing.Point(99, 21);
+            this.arraySizeLbl.Name = "arraySizeLbl";
+            this.arraySizeLbl.Size = new System.Drawing.Size(54, 13);
+            this.arraySizeLbl.TabIndex = 6;
+            this.arraySizeLbl.Text = "Array Size";
+            // 
+            // arraySize
+            // 
+            this.arraySize.FormattingEnabled = true;
+            this.arraySize.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.arraySize.Location = new System.Drawing.Point(99, 40);
+            this.arraySize.Name = "arraySize";
+            this.arraySize.Size = new System.Drawing.Size(121, 21);
+            this.arraySize.TabIndex = 5;
+            this.arraySize.SelectedIndexChanged += new System.EventHandler(this.arraySize_SelectedIndexChanged);
             // 
             // Solution
             // 
-            this.Solution.Location = new System.Drawing.Point(13, 19);
+            this.Solution.Location = new System.Drawing.Point(10, 186);
             this.Solution.Multiline = true;
             this.Solution.Name = "Solution";
-            this.Solution.Size = new System.Drawing.Size(686, 107);
+            this.Solution.Size = new System.Drawing.Size(660, 119);
             this.Solution.TabIndex = 0;
             // 
-            // RandomChoice
+            // Solve
             // 
-            this.RandomChoice.AutoSize = true;
-            this.RandomChoice.Location = new System.Drawing.Point(17, 41);
-            this.RandomChoice.Name = "RandomChoice";
-            this.RandomChoice.Size = new System.Drawing.Size(65, 17);
-            this.RandomChoice.TabIndex = 1;
-            this.RandomChoice.TabStop = true;
-            this.RandomChoice.Text = "Random";
-            this.RandomChoice.UseVisualStyleBackColor = true;
+            this.Solve.Location = new System.Drawing.Point(207, 100);
+            this.Solve.Name = "Solve";
+            this.Solve.Size = new System.Drawing.Size(75, 23);
+            this.Solve.TabIndex = 4;
+            this.Solve.Text = "Solve";
+            this.Solve.UseVisualStyleBackColor = true;
+            this.Solve.Click += new System.EventHandler(this.Solve_Click);
+            // 
+            // listado
+            // 
+            this.listado.Location = new System.Drawing.Point(81, 73);
+            this.listado.Name = "listado";
+            this.listado.Size = new System.Drawing.Size(201, 20);
+            this.listado.TabIndex = 3;
             // 
             // ListChoice
             // 
@@ -141,28 +193,34 @@
             this.ListChoice.TabStop = true;
             this.ListChoice.Text = "List:";
             this.ListChoice.UseVisualStyleBackColor = true;
+            this.ListChoice.CheckedChanged += new System.EventHandler(this.ListChoice_CheckedChanged);
             // 
-            // listado
+            // RandomChoice
             // 
-            this.listado.Location = new System.Drawing.Point(81, 73);
-            this.listado.Name = "listado";
-            this.listado.Size = new System.Drawing.Size(201, 20);
-            this.listado.TabIndex = 3;
+            this.RandomChoice.AutoSize = true;
+            this.RandomChoice.Location = new System.Drawing.Point(17, 41);
+            this.RandomChoice.Name = "RandomChoice";
+            this.RandomChoice.Size = new System.Drawing.Size(65, 17);
+            this.RandomChoice.TabIndex = 1;
+            this.RandomChoice.TabStop = true;
+            this.RandomChoice.Text = "Random";
+            this.RandomChoice.UseVisualStyleBackColor = true;
+            this.RandomChoice.CheckedChanged += new System.EventHandler(this.RandomChoice_CheckedChanged);
             // 
-            // Solve
+            // groupBox1
             // 
-            this.Solve.Location = new System.Drawing.Point(207, 100);
-            this.Solve.Name = "Solve";
-            this.Solve.Size = new System.Drawing.Size(75, 23);
-            this.Solve.TabIndex = 4;
-            this.Solve.Text = "Solve";
-            this.Solve.UseVisualStyleBackColor = true;
+            this.groupBox1.Location = new System.Drawing.Point(0, 172);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(688, 146);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Solution";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 449);
+            this.ClientSize = new System.Drawing.Size(855, 384);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AlgorithmTreeView);
             this.Controls.Add(this.menuStrip1);
@@ -174,8 +232,6 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +250,9 @@
         private System.Windows.Forms.TextBox listado;
         private System.Windows.Forms.RadioButton ListChoice;
         private System.Windows.Forms.RadioButton RandomChoice;
+        private System.Windows.Forms.Label arraySizeLbl;
+        private System.Windows.Forms.ComboBox arraySize;
+        private System.Windows.Forms.Label ArraySizeErrorLabel;
     }
 }
 
