@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("InsertionSort");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("QuickSort");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("InsertionSort");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("QuickSort");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
+            treeNode5,
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("LSS");
             this.AlgorithmTreeView = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +48,7 @@
             this.ListChoice = new System.Windows.Forms.RadioButton();
             this.RandomChoice = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.errorListlabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,14 +57,17 @@
             // 
             this.AlgorithmTreeView.Location = new System.Drawing.Point(1, 29);
             this.AlgorithmTreeView.Name = "AlgorithmTreeView";
-            treeNode1.Name = "InsertionSort";
-            treeNode1.Text = "InsertionSort";
-            treeNode2.Name = "QuickSort";
-            treeNode2.Text = "QuickSort";
-            treeNode3.Name = "Sorts";
-            treeNode3.Text = "Sorts";
+            treeNode5.Name = "InsertionSort";
+            treeNode5.Text = "InsertionSort";
+            treeNode6.Name = "QuickSort";
+            treeNode6.Text = "QuickSort";
+            treeNode7.Name = "Sorts";
+            treeNode7.Text = "Sorts";
+            treeNode8.Name = "LSS";
+            treeNode8.Text = "LSS";
             this.AlgorithmTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode7,
+            treeNode8});
             this.AlgorithmTreeView.Size = new System.Drawing.Size(136, 323);
             this.AlgorithmTreeView.TabIndex = 0;
             this.AlgorithmTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.AlgorithmTreeView_AfterSelect);
@@ -94,6 +99,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.errorListlabel);
             this.panel1.Controls.Add(this.ArraySizeErrorLabel);
             this.panel1.Controls.Add(this.arraySizeLbl);
             this.panel1.Controls.Add(this.arraySize);
@@ -103,7 +109,7 @@
             this.panel1.Controls.Add(this.ListChoice);
             this.panel1.Controls.Add(this.RandomChoice);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(144, 29);
+            this.panel1.Location = new System.Drawing.Point(143, 29);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(700, 323);
             this.panel1.TabIndex = 2;
@@ -122,7 +128,7 @@
             // arraySizeLbl
             // 
             this.arraySizeLbl.AutoSize = true;
-            this.arraySizeLbl.Location = new System.Drawing.Point(99, 21);
+            this.arraySizeLbl.Location = new System.Drawing.Point(78, 25);
             this.arraySizeLbl.Name = "arraySizeLbl";
             this.arraySizeLbl.Size = new System.Drawing.Size(54, 13);
             this.arraySizeLbl.TabIndex = 6;
@@ -152,7 +158,7 @@
             "18",
             "19",
             "20"});
-            this.arraySize.Location = new System.Drawing.Point(99, 40);
+            this.arraySize.Location = new System.Drawing.Point(81, 42);
             this.arraySize.Name = "arraySize";
             this.arraySize.Size = new System.Drawing.Size(121, 21);
             this.arraySize.TabIndex = 5;
@@ -160,7 +166,7 @@
             // 
             // Solution
             // 
-            this.Solution.Location = new System.Drawing.Point(10, 186);
+            this.Solution.Location = new System.Drawing.Point(16, 186);
             this.Solution.Multiline = true;
             this.Solution.Name = "Solution";
             this.Solution.Size = new System.Drawing.Size(660, 119);
@@ -180,7 +186,7 @@
             // 
             this.listado.Location = new System.Drawing.Point(81, 73);
             this.listado.Name = "listado";
-            this.listado.Size = new System.Drawing.Size(201, 20);
+            this.listado.Size = new System.Drawing.Size(480, 20);
             this.listado.TabIndex = 3;
             // 
             // ListChoice
@@ -209,12 +215,23 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(0, 172);
+            this.groupBox1.Location = new System.Drawing.Point(3, 172);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(688, 146);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solution";
+            // 
+            // errorListlabel
+            // 
+            this.errorListlabel.AutoSize = true;
+            this.errorListlabel.ForeColor = System.Drawing.Color.Red;
+            this.errorListlabel.Location = new System.Drawing.Point(565, 73);
+            this.errorListlabel.Name = "errorListlabel";
+            this.errorListlabel.Size = new System.Drawing.Size(126, 26);
+            this.errorListlabel.TabIndex = 8;
+            this.errorListlabel.Text = "**Debe ingresar una lista \r\nde Elementos a Ordenar";
+            this.errorListlabel.Visible = false;
             // 
             // MainWindow
             // 
@@ -253,6 +270,7 @@
         private System.Windows.Forms.Label arraySizeLbl;
         private System.Windows.Forms.ComboBox arraySize;
         private System.Windows.Forms.Label ArraySizeErrorLabel;
+        private System.Windows.Forms.Label errorListlabel;
     }
 }
 

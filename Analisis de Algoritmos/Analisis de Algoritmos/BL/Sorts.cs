@@ -13,7 +13,6 @@ namespace Analisis_de_Algoritmos.BL
         }
 
         private int size = 1;
-       // private int[] sortingArray = new int [size];
         List<int> sortingArray = new List<int>();
 
         public List<int> SortingArray   
