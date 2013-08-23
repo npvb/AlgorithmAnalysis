@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 
 namespace Analisis_de_Algoritmos.BL
 {
@@ -13,9 +14,9 @@ namespace Analisis_de_Algoritmos.BL
         }
 
         private int size = 1;
-        List<int> sortingArray = new List<int>();
+        List<IComparable> sortingArray = new List<IComparable>();
 
-        public List<int> SortingArray   
+        public List<IComparable> SortingArray   
         {
             get
             {
@@ -45,7 +46,7 @@ namespace Analisis_de_Algoritmos.BL
 
             for (i = 1; i < sortingArray.Count(); i++)
             {
-                int value = sortingArray[i];
+                IComparable value = sortingArray[i];
                 j = i - 1;
                 while ((j >= 0) && (sortingArray[j].CompareTo(value) > 0))
                 {
@@ -57,48 +58,91 @@ namespace Analisis_de_Algoritmos.BL
             ///return sortingArray;
         }
 
-        public void Quicksort(IComparable[] elements, int left, int right)
-         {
-              int i = left, j = right;
-              IComparable pivot = elements[(left + right) / 2];
+        public void QuickSort(List<IComparable> a, int left, int right)
+        {
+            int i = left;
+            int j = right;
+            IComparable leftString = a[i];
+            IComparable rightString = a[j];
+            double pivotValue = ((left + right) / 2);
+            IComparable middle = a[Convert.ToInt32(pivotValue)];
+            IComparable temp = null;
 
-              while (i <= j)
-              {
-                  while (elements[i].CompareTo(pivot) < 0)
-                  {
-                      i++;
-                  }
+             while (i <= j)
+             {
+                 while(a[i].CompareTo(middle) < 0)
+                 {
+                     i++;
+                     leftString = a[i];               
+                 }
+             while(a[j].CompareTo(middle) > 0)        
+             {               
+                 j--;           
+                 rightString = a[j];       
+             }
+                 if (i <= j)        
+                 {                  
+                    temp = a[i];      
+                    a[i++] = a[j];      
+                    a[j--] = temp;        
+                 }
+             } 
+            if (left < j) 
+            { 
+                QuickSort(a, left, j); 
+            } 
+            if (i < right) 
+            { 
+                QuickSort(a, i, right);
+            }
 
-                  while (elements[j].CompareTo(pivot) > 0)
-                  {
-                      j--;
-                  }
+        }
 
-                  if (i <= j)
-                  {
-                      // Swap
-                      IComparable tmp = elements[i];
-                      elements[i] = elements[j];
-                      elements[j] = tmp;
+        public Stopwatch Evaluate(int choice, string [] cadena)
+        {
+                Stopwatch sw = new Stopwatch();
 
-                      i++;
-                      j--;
-                  }
-              }
+                switch (choice)
+                {
+                    case 1:
+                            sw.Start();
+                            InsertionSort();
+                            sw.Stop();break;
 
-              // Recursive calls
-              if (left < j)
-              {
-                  Quicksort(elements, left, j);
-              }
+                    case 2:
+                      
+                            SortingArray.Clear();
+                            for (int x = 0; x < cadena.Length; x++)
+                            {
+                                SortingArray.Add(cadena[x]);
+                            }
+                            sw.Start();
+                            InsertionSort();
+                            sw.Stop(); break;
 
-              if (i < right)
-              {
-                  Quicksort(elements, i, right);
-              }
+                    case 3:
+                            sw.Start();
+                            QuickSort(SortingArray, 0, SortingArray.Count() - 1);
+                            sw.Stop();break;
+
+                    case 4:
+                            
+                           SortingArray.Clear();
+                            for (int x = 0; x < cadena.Length; x++)
+                            {
+                                SortingArray.Add(cadena[x]);
+                            }
+                            sw.Start();
+                            QuickSort(SortingArray, 0, SortingArray.Count() - 1);
+                            sw.Stop();break;
+
+                }
+                     return sw;
+
+            }
+           
         }
 
 
-
     }
-}
+

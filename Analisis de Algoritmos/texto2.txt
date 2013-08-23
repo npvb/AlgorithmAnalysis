@@ -1,0 +1,10 @@
+public string Info2
+
+  get
+  
+    return info2;
+  
+  set
+  
+    info2 = value;
+  
