@@ -70,11 +70,20 @@ namespace Analisis_de_Algoritmos
             Info2.Visible = true;
             Solve.Visible = true;
         }
+
+        private void HideLCSControls()
+        {
+            Info1.Visible = false;
+            Info2.Visible = false;
+            Solve.Visible = false;
+        }
         
         private void AlgorithmTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeNode node = AlgorithmTreeView.SelectedNode; ;
             nodoArbol = node.Text.ToString();
+            algorithm.Text = nodoArbol;
+
             if (nodoArbol.CompareTo("Sorts") == 0)
             {
                 HideControls();
@@ -87,6 +96,7 @@ namespace Analisis_de_Algoritmos
             }else if(nodoArbol.CompareTo("InsertionSort") == 0 || nodoArbol.CompareTo("QuickSort") == 0)
             {
                 ShowSortControls();
+                HideLCSControls();
                 Solve.Enabled = true;
                 listado.Enabled = true;
                 listado.Clear();
@@ -116,7 +126,7 @@ namespace Analisis_de_Algoritmos
             {
                 Stopwatch sw = new Stopwatch();
                 Stopwatch lw = new Stopwatch();
-                String [] cadena = listado.Text.ToString().Split(' ');
+                String [] cadena = listado.Text.ToString().Split(' ',',');
                 bool showComparison = false;
 
                 Solution.Text = " ";
@@ -141,6 +151,7 @@ namespace Analisis_de_Algoritmos
                 }
                 else if (nodoArbol.CompareTo("LCS") == 0) 
                 {
+                    /*Solution.Text = "";*/
                     Solution.Text = lcs.lcsBack(lcs.Info1, lcs.Info2);
                     
                 }
@@ -235,7 +246,6 @@ namespace Analisis_de_Algoritmos
                 lcs.Info1 = builder.ToString().Trim();
                 
             }
-            Solution.Text = lcs.Info1;
         }
 
         private void Info2_DoubleClick(object sender, EventArgs e)
@@ -259,114 +269,16 @@ namespace Analisis_de_Algoritmos
             }
         }
 
-     
-        /*private void Evaluate(int choice) 
+        private void Info1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Stopwatch sw = new Stopwatch();
-                Stopwatch lw = new Stopwatch();
-                bool showComparison = false;
+           lcs.Info1 = Info1.Text.ToString().Trim();
+        }
 
-                switch (choice)
-                {
-                    case 1:
-                        if (arraySize.SelectedItem == null)
-                        {
-                            ArraySizeErrorLabel.Visible = true;
-                        }
-                        else
-                        {
-                            sw.Start();
-                            sort.InsertionSort();
-                            sw.Stop();
+        private void Info2_TextChanged(object sender, EventArgs e)
+        {
+            lcs.Info2 = Info2.Text.ToString().Trim();
+        }
 
-                        } break;
-
-                    case 2:
-                        arraySize.Visible = false;
-                        ArraySizeErrorLabel.Visible = false;
-                        arraySizeLbl.Visible = false;
-
-                        if (listado.Text == "")
-                        {
-                            errorListlabel.Visible = true;
-                        }
-                        else
-                        {
-                            string[] cadena = listado.Text.ToString().Split(' ');
-                            sort.SortingArray.Clear();
-                            for (int x = 0; x < cadena.Length; x++)
-                            {
-                                sort.SortingArray.Add(cadena[x]);
-                            }
-                            sw.Start();
-                            sort.InsertionSort();
-                            sw.Stop();
-                        } break;
-
-                    case 3:
-                        if (arraySize.SelectedItem == null)
-                        {
-                            ArraySizeErrorLabel.Visible = true;
-                        }
-                        else
-                        {
-                            sw.Start();
-                            sort.QuickSort(sort.SortingArray, 0, sort.SortingArray.Count() - 1);
-                            sw.Stop();
-                        } break;
-
-                    case 4:
-                        arraySize.Visible = false;
-                        ArraySizeErrorLabel.Visible = false;
-                        arraySizeLbl.Visible = false;
-
-                        if (listado.Text == "")
-                        {
-                            errorListlabel.Visible = true;
-                        }
-                        else
-                        {
-                            string[] cadena = listado.Text.ToString().Split(' ');
-                            sort.SortingArray.Clear();
-                            for (int x = 0; x < cadena.Length; x++)
-                            {
-                                sort.SortingArray.Add(cadena[x]);
-                            }
-                            sw.Start();
-                            sort.QuickSort(sort.SortingArray, 0, sort.SortingArray.Count() - 1);
-                            sw.Stop();
-
-                            lw.Start();
-                            copySortArray.Sort();
-                            lw.Stop();
-                            showComparison = true;
-
-                        }break;
-
-                }
-
-                for (int x = 0; x < sort.SortingArray.Count(); x++)
-                {
-                    string cad = sort.SortingArray.ElementAt(x).ToString();
-                    Solution.AppendText(cad+ " ");
-                }
-
-                Solution.AppendText("\n");
-                Solution.AppendText("Time Elapsed with Algorithm: " + sw.Elapsed);
-                Solution.AppendText("\n");
-                
-                if (showComparison) 
-                {
-                    Solution.AppendText("Time Elapsed List Own Sort: " + lw.Elapsed);
-                }
-
-            }catch (Exception er) 
-            {
-                Solution.Text = er.ToString();
-            }
-        }*/
        
     }
 }

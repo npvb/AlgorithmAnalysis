@@ -39,6 +39,7 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.algorithm = new System.Windows.Forms.Label();
             this.Info2 = new System.Windows.Forms.TextBox();
             this.Info1 = new System.Windows.Forms.TextBox();
             this.errorListlabel = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             // 
             // AlgorithmTreeView
             // 
+            this.AlgorithmTreeView.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AlgorithmTreeView.Location = new System.Drawing.Point(1, 29);
             this.AlgorithmTreeView.Name = "AlgorithmTreeView";
             treeNode1.Name = "InsertionSort";
@@ -80,7 +82,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(855, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(889, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -101,6 +103,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.algorithm);
             this.panel1.Controls.Add(this.Info2);
             this.panel1.Controls.Add(this.Info1);
             this.panel1.Controls.Add(this.errorListlabel);
@@ -115,34 +118,48 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(143, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 351);
+            this.panel1.Size = new System.Drawing.Size(720, 351);
             this.panel1.TabIndex = 2;
+            // 
+            // algorithm
+            // 
+            this.algorithm.AutoSize = true;
+            this.algorithm.ForeColor = System.Drawing.Color.Purple;
+            this.algorithm.Location = new System.Drawing.Point(598, 6);
+            this.algorithm.Name = "algorithm";
+            this.algorithm.Size = new System.Drawing.Size(0, 13);
+            this.algorithm.TabIndex = 11;
             // 
             // Info2
             // 
+            this.Info2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Info2.Location = new System.Drawing.Point(273, 3);
             this.Info2.Multiline = true;
             this.Info2.Name = "Info2";
             this.Info2.Size = new System.Drawing.Size(177, 180);
             this.Info2.TabIndex = 10;
+            this.Info2.TextChanged += new System.EventHandler(this.Info2_TextChanged);
             this.Info2.DoubleClick += new System.EventHandler(this.Info2_DoubleClick);
             // 
             // Info1
             // 
+            this.Info1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Info1.Location = new System.Drawing.Point(45, 3);
             this.Info1.Multiline = true;
             this.Info1.Name = "Info1";
             this.Info1.Size = new System.Drawing.Size(177, 180);
             this.Info1.TabIndex = 9;
+            this.Info1.TextChanged += new System.EventHandler(this.Info1_TextChanged);
             this.Info1.DoubleClick += new System.EventHandler(this.Info1_DoubleClick_1);
             // 
             // errorListlabel
             // 
             this.errorListlabel.AutoSize = true;
+            this.errorListlabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorListlabel.ForeColor = System.Drawing.Color.Red;
             this.errorListlabel.Location = new System.Drawing.Point(565, 73);
             this.errorListlabel.Name = "errorListlabel";
-            this.errorListlabel.Size = new System.Drawing.Size(126, 26);
+            this.errorListlabel.Size = new System.Drawing.Size(145, 32);
             this.errorListlabel.TabIndex = 8;
             this.errorListlabel.Text = "**Debe ingresar una lista \r\nde Elementos a Ordenar";
             this.errorListlabel.Visible = false;
@@ -150,10 +167,11 @@
             // ArraySizeErrorLabel
             // 
             this.ArraySizeErrorLabel.AutoSize = true;
+            this.ArraySizeErrorLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ArraySizeErrorLabel.ForeColor = System.Drawing.Color.Red;
             this.ArraySizeErrorLabel.Location = new System.Drawing.Point(228, 45);
             this.ArraySizeErrorLabel.Name = "ArraySizeErrorLabel";
-            this.ArraySizeErrorLabel.Size = new System.Drawing.Size(146, 13);
+            this.ArraySizeErrorLabel.Size = new System.Drawing.Size(166, 16);
             this.ArraySizeErrorLabel.TabIndex = 7;
             this.ArraySizeErrorLabel.Text = "**Escoga Tamaño del Arreglo";
             this.ArraySizeErrorLabel.Visible = false;
@@ -199,6 +217,7 @@
             // 
             // Solution
             // 
+            this.Solution.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Solution.Location = new System.Drawing.Point(16, 203);
             this.Solution.Multiline = true;
             this.Solution.Name = "Solution";
@@ -207,6 +226,7 @@
             // 
             // Solve
             // 
+            this.Solve.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Solve.Location = new System.Drawing.Point(486, 99);
             this.Solve.Name = "Solve";
             this.Solve.Size = new System.Drawing.Size(75, 23);
@@ -217,17 +237,19 @@
             // 
             // listado
             // 
+            this.listado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listado.Location = new System.Drawing.Point(81, 73);
             this.listado.Name = "listado";
-            this.listado.Size = new System.Drawing.Size(480, 20);
+            this.listado.Size = new System.Drawing.Size(480, 21);
             this.listado.TabIndex = 3;
             // 
             // ListChoice
             // 
             this.ListChoice.AutoSize = true;
+            this.ListChoice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListChoice.Location = new System.Drawing.Point(17, 73);
             this.ListChoice.Name = "ListChoice";
-            this.ListChoice.Size = new System.Drawing.Size(44, 17);
+            this.ListChoice.Size = new System.Drawing.Size(44, 20);
             this.ListChoice.TabIndex = 2;
             this.ListChoice.TabStop = true;
             this.ListChoice.Text = "List:";
@@ -237,9 +259,10 @@
             // RandomChoice
             // 
             this.RandomChoice.AutoSize = true;
+            this.RandomChoice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RandomChoice.Location = new System.Drawing.Point(17, 41);
             this.RandomChoice.Name = "RandomChoice";
-            this.RandomChoice.Size = new System.Drawing.Size(65, 17);
+            this.RandomChoice.Size = new System.Drawing.Size(73, 20);
             this.RandomChoice.TabIndex = 1;
             this.RandomChoice.TabStop = true;
             this.RandomChoice.Text = "Random";
@@ -248,6 +271,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 189);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(688, 154);
@@ -259,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 384);
+            this.ClientSize = new System.Drawing.Size(889, 384);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AlgorithmTreeView);
             this.Controls.Add(this.menuStrip1);
@@ -295,6 +319,7 @@
         private System.Windows.Forms.Label errorListlabel;
         private System.Windows.Forms.TextBox Info2;
         private System.Windows.Forms.TextBox Info1;
+        private System.Windows.Forms.Label algorithm;
     }
 }
 
