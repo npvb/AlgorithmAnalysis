@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("InsertionSort");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("QuickSort");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("LCS");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("InsertionSort");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("QuickSort");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("LCS");
             this.AlgorithmTreeView = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Info2 = new System.Windows.Forms.TextBox();
+            this.Info1 = new System.Windows.Forms.TextBox();
             this.errorListlabel = new System.Windows.Forms.Label();
             this.ArraySizeErrorLabel = new System.Windows.Forms.Label();
             this.arraySizeLbl = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.ListChoice = new System.Windows.Forms.RadioButton();
             this.RandomChoice = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Info1 = new System.Windows.Forms.TextBox();
-            this.Info2 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,17 +59,17 @@
             // 
             this.AlgorithmTreeView.Location = new System.Drawing.Point(1, 29);
             this.AlgorithmTreeView.Name = "AlgorithmTreeView";
-            treeNode9.Name = "InsertionSort";
-            treeNode9.Text = "InsertionSort";
-            treeNode10.Name = "QuickSort";
-            treeNode10.Text = "QuickSort";
-            treeNode11.Name = "Sorts";
-            treeNode11.Text = "Sorts";
-            treeNode12.Name = "LCS";
-            treeNode12.Text = "LCS";
+            treeNode1.Name = "InsertionSort";
+            treeNode1.Text = "InsertionSort";
+            treeNode2.Name = "QuickSort";
+            treeNode2.Text = "QuickSort";
+            treeNode3.Name = "Sorts";
+            treeNode3.Text = "Sorts";
+            treeNode4.Name = "LCS";
+            treeNode4.Text = "LCS";
             this.AlgorithmTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode12});
+            treeNode3,
+            treeNode4});
             this.AlgorithmTreeView.Size = new System.Drawing.Size(136, 351);
             this.AlgorithmTreeView.TabIndex = 0;
             this.AlgorithmTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.AlgorithmTreeView_AfterSelect);
@@ -117,6 +117,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(700, 351);
             this.panel1.TabIndex = 2;
+            // 
+            // Info2
+            // 
+            this.Info2.Location = new System.Drawing.Point(273, 3);
+            this.Info2.Multiline = true;
+            this.Info2.Name = "Info2";
+            this.Info2.Size = new System.Drawing.Size(177, 180);
+            this.Info2.TabIndex = 10;
+            this.Info2.DoubleClick += new System.EventHandler(this.Info2_DoubleClick);
+            // 
+            // Info1
+            // 
+            this.Info1.Location = new System.Drawing.Point(45, 3);
+            this.Info1.Multiline = true;
+            this.Info1.Name = "Info1";
+            this.Info1.Size = new System.Drawing.Size(177, 180);
+            this.Info1.TabIndex = 9;
+            this.Info1.DoubleClick += new System.EventHandler(this.Info1_DoubleClick_1);
             // 
             // errorListlabel
             // 
@@ -236,24 +254,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solution";
-            // 
-            // Info1
-            // 
-            this.Info1.Location = new System.Drawing.Point(45, 3);
-            this.Info1.Multiline = true;
-            this.Info1.Name = "Info1";
-            this.Info1.Size = new System.Drawing.Size(177, 180);
-            this.Info1.TabIndex = 9;
-            this.Info1.DoubleClick += new System.EventHandler(this.Info1_DoubleClick_1);
-            // 
-            // Info2
-            // 
-            this.Info2.Location = new System.Drawing.Point(273, 3);
-            this.Info2.Multiline = true;
-            this.Info2.Name = "Info2";
-            this.Info2.Size = new System.Drawing.Size(177, 180);
-            this.Info2.TabIndex = 10;
-            this.Info2.DoubleClick += new System.EventHandler(this.Info2_DoubleClick);
             // 
             // MainWindow
             // 

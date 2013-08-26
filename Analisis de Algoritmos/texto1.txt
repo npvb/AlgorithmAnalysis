@@ -1,10 +1,10 @@
-public string Info1
+public string Info1{
 
-  get
+  get{
   
-    return info1;
+    return info1;}
   
-  set
+  set{
   
-    info1 = value;
+    info1 = value;}
   
