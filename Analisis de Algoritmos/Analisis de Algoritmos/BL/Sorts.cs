@@ -98,10 +98,45 @@ namespace Analisis_de_Algoritmos.BL
 
         }
 
+        public  List<IComparable> Sort (List<IComparable> list)
+        {
+            List<IComparable> left = new List<IComparable>();
+            List<IComparable> right = new List<IComparable>();
+            if (list.Count <= 1)
+            {
+                return list;
+            }
+            else
+            {
+                left = list.GetRange(0, list.Count / 2);
+                right = list.GetRange(left.Count, list.Count - left.Count);
+            }
+
+            return MergeSort(Sort(left), Sort(right)); 
+        }
+        public List<IComparable> MergeSort(List<IComparable> left, List<IComparable> right)
+        {
+            List<IComparable> result = new List<IComparable>(); 
+            while (left.Count > 0 && right.Count > 0) 
+            { 
+                if (left[0].CompareTo(right[0]) <= 0) 
+                {
+                    result.Add(left[0]); left.RemoveAt(0); 
+                }
+                else {
+                    result.Add(right[0]);
+                    right.RemoveAt(0); 
+                } 
+            } 
+            result.AddRange(left); 
+            result.AddRange(right); 
+            return result;
+        }
+
         public Stopwatch Evaluate(int choice, string [] cadena)
         {
                 Stopwatch sw = new Stopwatch();
-
+                List<IComparable> temp = new List<IComparable>();
                 switch (choice)
                 {
                     case 1:
@@ -135,6 +170,12 @@ namespace Analisis_de_Algoritmos.BL
                             sw.Start();
                             QuickSort(SortingArray, 0, SortingArray.Count() - 1);
                             sw.Stop();break;
+                        
+                    case 6:
+                            //temp = sortingArray;
+                            sw.Start();
+                            temp = Sort(sortingArray);
+                            sw.Stop();break;                                           
 
                 }
                      return sw;

@@ -93,11 +93,12 @@ namespace Analisis_de_Algoritmos
                 Solve.Enabled = false;
                 listado.Enabled = false;*/
                 
-            }else if(nodoArbol.CompareTo("InsertionSort") == 0 || nodoArbol.CompareTo("QuickSort") == 0)
+            }else if(nodoArbol.CompareTo("InsertionSort") == 0 || nodoArbol.CompareTo("QuickSort") == 0 || nodoArbol.CompareTo("MergeSort") == 0)
             {
                 ShowSortControls();
                 HideLCSControls();
                 Solve.Enabled = true;
+                Solve.Visible = true;
                 listado.Enabled = true;
                 listado.Clear();
                 Solution.Clear();
@@ -149,9 +150,20 @@ namespace Analisis_de_Algoritmos
                     showComparison = true;
 
                 }
+                else if (ListChoice.Checked && nodoArbol.CompareTo("MergeSort") == 0)
+                {
+                    sw = sort.Evaluate(5, cadena);
+                    showComparison = true;
+
+                }
+                else if (RandomChoice.Checked && nodoArbol.CompareTo("MergeSort") == 0)
+                {
+                    sw = sort.Evaluate(6, cadena);
+                    showComparison = true;
+
+                }
                 else if (nodoArbol.CompareTo("LCS") == 0) 
                 {
-                    /*Solution.Text = "";*/
                     Solution.Text = lcs.lcsBack(lcs.Info1, lcs.Info2);
                     
                 }

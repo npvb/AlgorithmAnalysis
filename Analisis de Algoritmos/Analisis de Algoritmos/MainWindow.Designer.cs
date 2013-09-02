@@ -30,10 +30,12 @@
         {
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("InsertionSort");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("QuickSort");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("MergeSort");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
             treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("LCS");
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("LCS");
             this.AlgorithmTreeView = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,13 +67,15 @@
             treeNode1.Text = "InsertionSort";
             treeNode2.Name = "QuickSort";
             treeNode2.Text = "QuickSort";
-            treeNode3.Name = "Sorts";
-            treeNode3.Text = "Sorts";
-            treeNode4.Name = "LCS";
-            treeNode4.Text = "LCS";
+            treeNode3.Name = "MergeSort";
+            treeNode3.Text = "MergeSort";
+            treeNode4.Name = "Sorts";
+            treeNode4.Text = "Sorts";
+            treeNode5.Name = "LCS";
+            treeNode5.Text = "LCS";
             this.AlgorithmTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4});
+            treeNode4,
+            treeNode5});
             this.AlgorithmTreeView.Size = new System.Drawing.Size(136, 351);
             this.AlgorithmTreeView.TabIndex = 0;
             this.AlgorithmTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.AlgorithmTreeView_AfterSelect);
