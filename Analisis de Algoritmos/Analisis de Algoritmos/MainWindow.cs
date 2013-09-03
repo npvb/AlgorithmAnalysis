@@ -127,17 +127,23 @@ namespace Analisis_de_Algoritmos
             {
                 Stopwatch sw = new Stopwatch();
                 Stopwatch lw = new Stopwatch();
-                String [] cadena = listado.Text.ToString().Split(' ',',');
                 bool showComparison = false;
+                String[] cadena = listado.Text.ToString().Split(' ', ',');
 
                 Solution.Text = " ";
                 if (RandomChoice.Checked && nodoArbol.CompareTo("InsertionSort") == 0)
                 {
                     sw = sort.Evaluate(1, cadena);
+                    showComparison = true;
                 }
                 else if (ListChoice.Checked && nodoArbol.CompareTo("InsertionSort") == 0)
                 {
                    sw = sort.Evaluate(2,cadena);
+                   foreach (String c in cadena)
+                   {
+                       copySortArray.Add(c);
+                   }
+                   showComparison = true;
                 }
                 else if (RandomChoice.Checked && nodoArbol.CompareTo("QuickSort") == 0)
                 {
@@ -147,12 +153,22 @@ namespace Analisis_de_Algoritmos
                 else if (ListChoice.Checked && nodoArbol.CompareTo("QuickSort") == 0)
                 {
                     sw = sort.Evaluate(4,cadena);
+                    foreach (String c in cadena)
+                    {
+                        copySortArray.Add(c);
+                    }
+
                     showComparison = true;
 
                 }
                 else if (ListChoice.Checked && nodoArbol.CompareTo("MergeSort") == 0)
                 {
                     sw = sort.Evaluate(5, cadena);
+                    foreach (String c in cadena)
+                    {
+                        copySortArray.Add(c);
+                    }
+
                     showComparison = true;
 
                 }
@@ -170,7 +186,7 @@ namespace Analisis_de_Algoritmos
                 else
                     MessageBox.Show("Escoga una Algoritmo a Evaluar");
 
-                if (nodoArbol.CompareTo("QuickSort") == 0 || nodoArbol.CompareTo("InsertionSort") == 0)
+                if (nodoArbol.CompareTo("QuickSort") == 0 || nodoArbol.CompareTo("InsertionSort") == 0 || nodoArbol.CompareTo("MergeSort") == 0)
                 {
                     for (int x = 0; x < sort.SortingArray.Count(); x++)
                     {

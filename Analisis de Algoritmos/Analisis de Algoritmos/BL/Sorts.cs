@@ -170,12 +170,22 @@ namespace Analisis_de_Algoritmos.BL
                             sw.Start();
                             QuickSort(SortingArray, 0, SortingArray.Count() - 1);
                             sw.Stop();break;
+
+                    case 5:
+                           SortingArray.Clear();
+                            for (int x = 0; x < cadena.Length; x++)
+                            {
+                                SortingArray.Add(cadena[x]);
+                            }
+                            sw.Start();
+                            sortingArray = Sort(sortingArray);
+                            sw.Stop();break;
                         
                     case 6:
-                            //temp = sortingArray;
                             sw.Start();
-                            temp = Sort(sortingArray);
-                            sw.Stop();break;                                           
+                            sortingArray = Sort(sortingArray);
+                            sw.Stop();
+                            break;                                           
 
                 }
                      return sw;
