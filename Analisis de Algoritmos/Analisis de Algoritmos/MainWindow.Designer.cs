@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("InsertionSort");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("QuickSort");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("MergeSort");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("LCS");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("InsertionSort");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("QuickSort");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("MergeSort");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("LCS");
             this.AlgorithmTreeView = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +54,8 @@
             this.ListChoice = new System.Windows.Forms.RadioButton();
             this.RandomChoice = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.algoInformation = new System.Windows.Forms.TextBox();
+            this.pseudoInformation = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,20 +65,20 @@
             this.AlgorithmTreeView.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AlgorithmTreeView.Location = new System.Drawing.Point(1, 29);
             this.AlgorithmTreeView.Name = "AlgorithmTreeView";
-            treeNode1.Name = "InsertionSort";
-            treeNode1.Text = "InsertionSort";
-            treeNode2.Name = "QuickSort";
-            treeNode2.Text = "QuickSort";
-            treeNode3.Name = "MergeSort";
-            treeNode3.Text = "MergeSort";
-            treeNode4.Name = "Sorts";
-            treeNode4.Text = "Sorts";
-            treeNode5.Name = "LCS";
-            treeNode5.Text = "LCS";
+            treeNode6.Name = "InsertionSort";
+            treeNode6.Text = "InsertionSort";
+            treeNode7.Name = "QuickSort";
+            treeNode7.Text = "QuickSort";
+            treeNode8.Name = "MergeSort";
+            treeNode8.Text = "MergeSort";
+            treeNode9.Name = "Sorts";
+            treeNode9.Text = "Sorts";
+            treeNode10.Name = "LCS";
+            treeNode10.Text = "LCS";
             this.AlgorithmTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5});
-            this.AlgorithmTreeView.Size = new System.Drawing.Size(136, 351);
+            treeNode9,
+            treeNode10});
+            this.AlgorithmTreeView.Size = new System.Drawing.Size(136, 363);
             this.AlgorithmTreeView.TabIndex = 0;
             this.AlgorithmTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.AlgorithmTreeView_AfterSelect);
             // 
@@ -86,7 +88,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(889, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1105, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,7 +109,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.algorithm);
             this.panel1.Controls.Add(this.Info2);
             this.panel1.Controls.Add(this.Info1);
             this.panel1.Controls.Add(this.errorListlabel);
@@ -122,16 +123,17 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(143, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 351);
+            this.panel1.Size = new System.Drawing.Size(720, 363);
             this.panel1.TabIndex = 2;
             // 
             // algorithm
             // 
             this.algorithm.AutoSize = true;
+            this.algorithm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.algorithm.ForeColor = System.Drawing.Color.Purple;
-            this.algorithm.Location = new System.Drawing.Point(598, 6);
+            this.algorithm.Location = new System.Drawing.Point(879, 32);
             this.algorithm.Name = "algorithm";
-            this.algorithm.Size = new System.Drawing.Size(0, 13);
+            this.algorithm.Size = new System.Drawing.Size(0, 19);
             this.algorithm.TabIndex = 11;
             // 
             // Info2
@@ -142,7 +144,6 @@
             this.Info2.Name = "Info2";
             this.Info2.Size = new System.Drawing.Size(177, 180);
             this.Info2.TabIndex = 10;
-            this.Info2.TextChanged += new System.EventHandler(this.Info2_TextChanged);
             this.Info2.DoubleClick += new System.EventHandler(this.Info2_DoubleClick);
             // 
             // Info1
@@ -153,7 +154,7 @@
             this.Info1.Name = "Info1";
             this.Info1.Size = new System.Drawing.Size(177, 180);
             this.Info1.TabIndex = 9;
-            this.Info1.TextChanged += new System.EventHandler(this.Info1_TextChanged);
+            this.Info1.Click += new System.EventHandler(this.Info1_Click);
             this.Info1.DoubleClick += new System.EventHandler(this.Info1_DoubleClick_1);
             // 
             // errorListlabel
@@ -222,10 +223,10 @@
             // Solution
             // 
             this.Solution.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Solution.Location = new System.Drawing.Point(16, 203);
+            this.Solution.Location = new System.Drawing.Point(16, 209);
             this.Solution.Multiline = true;
             this.Solution.Name = "Solution";
-            this.Solution.Size = new System.Drawing.Size(660, 120);
+            this.Solution.Size = new System.Drawing.Size(660, 140);
             this.Solution.TabIndex = 0;
             // 
             // Solve
@@ -278,16 +279,41 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 189);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(688, 154);
+            this.groupBox1.Size = new System.Drawing.Size(688, 171);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solution";
+            // 
+            // algoInformation
+            // 
+            this.algoInformation.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.algoInformation.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.algoInformation.Location = new System.Drawing.Point(883, 74);
+            this.algoInformation.Multiline = true;
+            this.algoInformation.Name = "algoInformation";
+            this.algoInformation.ReadOnly = true;
+            this.algoInformation.Size = new System.Drawing.Size(210, 165);
+            this.algoInformation.TabIndex = 14;
+            // 
+            // pseudoInformation
+            // 
+            this.pseudoInformation.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pseudoInformation.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pseudoInformation.Location = new System.Drawing.Point(883, 245);
+            this.pseudoInformation.Multiline = true;
+            this.pseudoInformation.Name = "pseudoInformation";
+            this.pseudoInformation.ReadOnly = true;
+            this.pseudoInformation.Size = new System.Drawing.Size(210, 158);
+            this.pseudoInformation.TabIndex = 15;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 384);
+            this.ClientSize = new System.Drawing.Size(1105, 404);
+            this.Controls.Add(this.pseudoInformation);
+            this.Controls.Add(this.algoInformation);
+            this.Controls.Add(this.algorithm);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AlgorithmTreeView);
             this.Controls.Add(this.menuStrip1);
@@ -324,6 +350,8 @@
         private System.Windows.Forms.TextBox Info2;
         private System.Windows.Forms.TextBox Info1;
         private System.Windows.Forms.Label algorithm;
+        private System.Windows.Forms.TextBox algoInformation;
+        private System.Windows.Forms.TextBox pseudoInformation;
     }
 }
 

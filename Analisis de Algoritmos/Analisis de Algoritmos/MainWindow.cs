@@ -77,7 +77,18 @@ namespace Analisis_de_Algoritmos
             Info2.Visible = false;
             Solve.Visible = false;
         }
-        
+
+        private void ShowSortInfo() 
+        {
+            ShowSortControls();
+            HideLCSControls();
+            Solve.Enabled = true;
+            Solve.Visible = true;
+            listado.Enabled = true;
+            listado.Clear();
+            Solution.Clear();
+        }
+
         private void AlgorithmTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeNode node = AlgorithmTreeView.SelectedNode; ;
@@ -93,17 +104,23 @@ namespace Analisis_de_Algoritmos
                 Solve.Enabled = false;
                 listado.Enabled = false;*/
                 
-            }else if(nodoArbol.CompareTo("InsertionSort") == 0 || nodoArbol.CompareTo("QuickSort") == 0 || nodoArbol.CompareTo("MergeSort") == 0)
+            }else if(nodoArbol.CompareTo("InsertionSort") == 0)
             {
-                ShowSortControls();
-                HideLCSControls();
-                Solve.Enabled = true;
-                Solve.Visible = true;
-                listado.Enabled = true;
-                listado.Clear();
-                Solution.Clear();
+                ShowSortInfo();
+                algoInformation.Text = "Es una manera muy natural de ordenar para un ser humano, y puede usarse fácilmente para ordenar un mazo de cartas numeradas en forma arbitraria. Requiere O(n²) operaciones para ordenar una lista de n elementos.";
+                pseudoInformation.Text = "para i=1 hasta n-1 \n minimo = i; \n para j=i+1 hasta n \n  si lista[j] < lista[minimo] entonces \n  minimo = j \n fin si \n fin para \nintercambiar(lista[i], lista[minimo])";
 
-            }else if (nodoArbol.CompareTo("LCS") == 0) 
+            }else if(nodoArbol.CompareTo("QuickSort") == 0)
+            {
+                ShowSortInfo();
+                algoInformation.Text = "Quicksort es un algoritmo de ordenación, es una mejora sustancial del método de intercambio directo y recibe el nombre de Quick Sort por la velocidad con que ordena los elementos del arreglo Este método se basa en la táctica “divide y vencerás”: consiste en dividir un problema en subproblemas y luego juntar las respuestas de estos subproblemas para obtener la solución al problema central (subdividiendo el array en arrays mas pequeños y ordenar estos).Es considerado entre los mas rápidos y eficientes de los métodos de ordenación interna.";
+            }
+            else if (nodoArbol.CompareTo("MergeSort") == 0) 
+            {
+                ShowSortInfo();
+                algoInformation.Text ="Consiste en dividir en dos partes iguales el vector a ordenar, ordenar por separado cada una de las partes, y luego mezclar ambas partes, manteniendo el orden, en un solo vector ordenado. El algoritmo MergeSort (u Ordenamiento por mezcla) es un algoritmo que sirve para ordenar secuencias de datos.";
+            }
+            else if (nodoArbol.CompareTo("LCS") == 0)
             {
                 HideSortControls();
                 ShowLCSControls();
@@ -180,6 +197,27 @@ namespace Analisis_de_Algoritmos
                 }
                 else if (nodoArbol.CompareTo("LCS") == 0) 
                 {
+
+                    String[] cadena1 = Info1.Text.ToString().Split('\r', '\n', ' ');
+                    String[] cadena2 = Info2.Text.ToString().Split('\r', '\n', ' ');
+                    lcs.Info2 = "";
+                    lcs.Info1 = "";
+                    StringBuilder builder = new StringBuilder();
+                    StringBuilder builder1 = new StringBuilder();
+                    
+                    foreach (string value in cadena1)
+                    {
+                        builder.Append(value);
+                    }
+                    //builder.Clear();
+                    foreach (string value in cadena2)
+                    {
+                        builder1.Append(value);
+                    }
+
+                    lcs.Info1 = builder.ToString().ToLower();
+                    lcs.Info2 = builder1.ToString().ToLower();
+
                     Solution.Text = lcs.lcsBack(lcs.Info1, lcs.Info2);
                     
                 }
@@ -262,16 +300,7 @@ namespace Analisis_de_Algoritmos
             {
                 string file = openFileDialog1.FileName;
                 string texto = File.ReadAllText(file);
-                String[] cadena = texto.Split('\r','\n',' ');
                 Info1.Text = texto;
-
-                StringBuilder builder = new StringBuilder();
-                foreach (string value in cadena)
-                {
-                    builder.Append(value);
-                }
-
-                lcs.Info1 = builder.ToString().Trim();
                 
             }
         }
@@ -284,28 +313,18 @@ namespace Analisis_de_Algoritmos
             {
                 string file = openFileDialog1.FileName;
                 string texto = File.ReadAllText(file);
-                String[] cadena = texto.Split('\r', '\n', ' ');
                 Info2.Text = texto;
 
-                StringBuilder builder = new StringBuilder();
-                foreach (string value in cadena)
-                {
-                    builder.Append(value);
-                }
-
-                lcs.Info2 = builder.ToString().Trim();
             }
         }
 
-        private void Info1_TextChanged(object sender, EventArgs e)
+        private void Info1_Click(object sender, EventArgs e)
         {
-           lcs.Info1 = Info1.Text.ToString().Trim();
+            /*lcs.Info1 = null;
+            lcs.Info2 = null;*/
         }
 
-        private void Info2_TextChanged(object sender, EventArgs e)
-        {
-            lcs.Info2 = Info2.Text.ToString().Trim();
-        }
+    
 
        
     }
