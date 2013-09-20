@@ -28,20 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("InsertionSort");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("QuickSort");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("MergeSort");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("LCS");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("InsertionSort");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("QuickSort");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("MergeSort");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Sorts", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("LCS");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Potencia");
             this.AlgorithmTreeView = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.algorithm = new System.Windows.Forms.Label();
+            this.infoLCS = new System.Windows.Forms.Label();
+            this.formatoLista = new System.Windows.Forms.Label();
+            this.PowPotErrorLabel = new System.Windows.Forms.Label();
+            this.PowNumErrorLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.potenciaTxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numerotxt = new System.Windows.Forms.TextBox();
             this.Info2 = new System.Windows.Forms.TextBox();
             this.Info1 = new System.Windows.Forms.TextBox();
             this.errorListlabel = new System.Windows.Forms.Label();
@@ -54,6 +62,7 @@
             this.ListChoice = new System.Windows.Forms.RadioButton();
             this.RandomChoice = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.algorithm = new System.Windows.Forms.Label();
             this.algoInformation = new System.Windows.Forms.TextBox();
             this.pseudoInformation = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
@@ -65,20 +74,23 @@
             this.AlgorithmTreeView.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AlgorithmTreeView.Location = new System.Drawing.Point(1, 29);
             this.AlgorithmTreeView.Name = "AlgorithmTreeView";
-            treeNode6.Name = "InsertionSort";
-            treeNode6.Text = "InsertionSort";
-            treeNode7.Name = "QuickSort";
-            treeNode7.Text = "QuickSort";
-            treeNode8.Name = "MergeSort";
-            treeNode8.Text = "MergeSort";
-            treeNode9.Name = "Sorts";
-            treeNode9.Text = "Sorts";
-            treeNode10.Name = "LCS";
-            treeNode10.Text = "LCS";
+            treeNode1.Name = "InsertionSort";
+            treeNode1.Text = "InsertionSort";
+            treeNode2.Name = "QuickSort";
+            treeNode2.Text = "QuickSort";
+            treeNode3.Name = "MergeSort";
+            treeNode3.Text = "MergeSort";
+            treeNode4.Name = "Sorts";
+            treeNode4.Text = "Sorts";
+            treeNode5.Name = "LCS";
+            treeNode5.Text = "LCS";
+            treeNode6.Name = "Potencia";
+            treeNode6.Text = "Potencia";
             this.AlgorithmTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10});
-            this.AlgorithmTreeView.Size = new System.Drawing.Size(136, 363);
+            treeNode4,
+            treeNode5,
+            treeNode6});
+            this.AlgorithmTreeView.Size = new System.Drawing.Size(136, 374);
             this.AlgorithmTreeView.TabIndex = 0;
             this.AlgorithmTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.AlgorithmTreeView_AfterSelect);
             // 
@@ -109,6 +121,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.infoLCS);
+            this.panel1.Controls.Add(this.formatoLista);
+            this.panel1.Controls.Add(this.PowPotErrorLabel);
+            this.panel1.Controls.Add(this.PowNumErrorLabel);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.potenciaTxt);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.numerotxt);
             this.panel1.Controls.Add(this.Info2);
             this.panel1.Controls.Add(this.Info1);
             this.panel1.Controls.Add(this.errorListlabel);
@@ -123,23 +143,91 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(143, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 363);
+            this.panel1.Size = new System.Drawing.Size(720, 374);
             this.panel1.TabIndex = 2;
             // 
-            // algorithm
+            // infoLCS
             // 
-            this.algorithm.AutoSize = true;
-            this.algorithm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.algorithm.ForeColor = System.Drawing.Color.Purple;
-            this.algorithm.Location = new System.Drawing.Point(879, 32);
-            this.algorithm.Name = "algorithm";
-            this.algorithm.Size = new System.Drawing.Size(0, 19);
-            this.algorithm.TabIndex = 11;
+            this.infoLCS.AutoSize = true;
+            this.infoLCS.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoLCS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.infoLCS.Location = new System.Drawing.Point(62, 195);
+            this.infoLCS.Name = "infoLCS";
+            this.infoLCS.Size = new System.Drawing.Size(186, 15);
+            this.infoLCS.TabIndex = 17;
+            this.infoLCS.Text = "**Doble Clic para leer un archivo";
+            // 
+            // formatoLista
+            // 
+            this.formatoLista.AutoSize = true;
+            this.formatoLista.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formatoLista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.formatoLista.Location = new System.Drawing.Point(81, 102);
+            this.formatoLista.Name = "formatoLista";
+            this.formatoLista.Size = new System.Drawing.Size(271, 15);
+            this.formatoLista.TabIndex = 18;
+            this.formatoLista.Text = "**Ingrese los valores seguidos con [ , ] Ej: 3,4,5,6,2";
+            // 
+            // PowPotErrorLabel
+            // 
+            this.PowPotErrorLabel.AutoSize = true;
+            this.PowPotErrorLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PowPotErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.PowPotErrorLabel.Location = new System.Drawing.Point(492, 78);
+            this.PowPotErrorLabel.Name = "PowPotErrorLabel";
+            this.PowPotErrorLabel.Size = new System.Drawing.Size(160, 16);
+            this.PowPotErrorLabel.TabIndex = 16;
+            this.PowPotErrorLabel.Text = "**Debe ingresar la potencia";
+            this.PowPotErrorLabel.Visible = false;
+            // 
+            // PowNumErrorLabel
+            // 
+            this.PowNumErrorLabel.AutoSize = true;
+            this.PowNumErrorLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PowNumErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.PowNumErrorLabel.Location = new System.Drawing.Point(492, 54);
+            this.PowNumErrorLabel.Name = "PowNumErrorLabel";
+            this.PowNumErrorLabel.Size = new System.Drawing.Size(156, 16);
+            this.PowNumErrorLabel.TabIndex = 15;
+            this.PowNumErrorLabel.Text = "**Debe ingresar un Numero";
+            this.PowNumErrorLabel.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Potencia";
+            // 
+            // potenciaTxt
+            // 
+            this.potenciaTxt.Location = new System.Drawing.Point(81, 78);
+            this.potenciaTxt.Name = "potenciaTxt";
+            this.potenciaTxt.Size = new System.Drawing.Size(405, 20);
+            this.potenciaTxt.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Número";
+            // 
+            // numerotxt
+            // 
+            this.numerotxt.Location = new System.Drawing.Point(81, 51);
+            this.numerotxt.Name = "numerotxt";
+            this.numerotxt.Size = new System.Drawing.Size(405, 20);
+            this.numerotxt.TabIndex = 11;
             // 
             // Info2
             // 
             this.Info2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Info2.Location = new System.Drawing.Point(273, 3);
+            this.Info2.Location = new System.Drawing.Point(71, 15);
             this.Info2.Multiline = true;
             this.Info2.Name = "Info2";
             this.Info2.Size = new System.Drawing.Size(177, 180);
@@ -149,12 +237,11 @@
             // Info1
             // 
             this.Info1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Info1.Location = new System.Drawing.Point(45, 3);
+            this.Info1.Location = new System.Drawing.Point(294, 15);
             this.Info1.Multiline = true;
             this.Info1.Name = "Info1";
             this.Info1.Size = new System.Drawing.Size(177, 180);
             this.Info1.TabIndex = 9;
-            this.Info1.Click += new System.EventHandler(this.Info1_Click);
             this.Info1.DoubleClick += new System.EventHandler(this.Info1_DoubleClick_1);
             // 
             // errorListlabel
@@ -194,26 +281,28 @@
             // 
             this.arraySize.FormattingEnabled = true;
             this.arraySize.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
             "5",
-            "6",
-            "7",
-            "8",
-            "9",
             "10",
-            "11",
-            "12",
-            "13",
-            "14",
             "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20"});
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55",
+            "60",
+            "65",
+            "70",
+            "75",
+            "80",
+            "85",
+            "90",
+            "95",
+            "100",
+            "500",
+            "1000"});
             this.arraySize.Location = new System.Drawing.Point(81, 42);
             this.arraySize.Name = "arraySize";
             this.arraySize.Size = new System.Drawing.Size(121, 21);
@@ -223,7 +312,7 @@
             // Solution
             // 
             this.Solution.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Solution.Location = new System.Drawing.Point(16, 209);
+            this.Solution.Location = new System.Drawing.Point(16, 220);
             this.Solution.Multiline = true;
             this.Solution.Name = "Solution";
             this.Solution.Size = new System.Drawing.Size(660, 140);
@@ -252,7 +341,7 @@
             // 
             this.ListChoice.AutoSize = true;
             this.ListChoice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListChoice.Location = new System.Drawing.Point(17, 73);
+            this.ListChoice.Location = new System.Drawing.Point(13, 73);
             this.ListChoice.Name = "ListChoice";
             this.ListChoice.Size = new System.Drawing.Size(44, 20);
             this.ListChoice.TabIndex = 2;
@@ -265,7 +354,7 @@
             // 
             this.RandomChoice.AutoSize = true;
             this.RandomChoice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RandomChoice.Location = new System.Drawing.Point(17, 41);
+            this.RandomChoice.Location = new System.Drawing.Point(11, 41);
             this.RandomChoice.Name = "RandomChoice";
             this.RandomChoice.Size = new System.Drawing.Size(73, 20);
             this.RandomChoice.TabIndex = 1;
@@ -277,12 +366,22 @@
             // groupBox1
             // 
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 189);
+            this.groupBox1.Location = new System.Drawing.Point(3, 201);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(688, 171);
+            this.groupBox1.Size = new System.Drawing.Size(688, 170);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solution";
+            // 
+            // algorithm
+            // 
+            this.algorithm.AutoSize = true;
+            this.algorithm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.algorithm.ForeColor = System.Drawing.Color.Purple;
+            this.algorithm.Location = new System.Drawing.Point(879, 32);
+            this.algorithm.Name = "algorithm";
+            this.algorithm.Size = new System.Drawing.Size(0, 19);
+            this.algorithm.TabIndex = 11;
             // 
             // algoInformation
             // 
@@ -310,7 +409,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 404);
+            this.ClientSize = new System.Drawing.Size(1105, 413);
             this.Controls.Add(this.pseudoInformation);
             this.Controls.Add(this.algoInformation);
             this.Controls.Add(this.algorithm);
@@ -352,6 +451,14 @@
         private System.Windows.Forms.Label algorithm;
         private System.Windows.Forms.TextBox algoInformation;
         private System.Windows.Forms.TextBox pseudoInformation;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox potenciaTxt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox numerotxt;
+        private System.Windows.Forms.Label PowPotErrorLabel;
+        private System.Windows.Forms.Label PowNumErrorLabel;
+        private System.Windows.Forms.Label infoLCS;
+        private System.Windows.Forms.Label formatoLista;
     }
 }
 

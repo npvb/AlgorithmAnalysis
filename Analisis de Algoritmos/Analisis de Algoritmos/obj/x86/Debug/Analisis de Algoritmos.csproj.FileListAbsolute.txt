@@ -21,12 +21,10 @@ C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-ma
 C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis de Algoritmos.csproj.GenerateResource.Cache
 C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis de Algoritmos.exe
 C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis de Algoritmos.pdb
-D:\Navy Documents\u\Analis. de Algoritmos\AlgorithmAnalysis\Analisis de Algoritmos\Analisis de Algoritmos\bin\Debug\Analisis de Algoritmos.exe
-D:\Navy Documents\u\Analis. de Algoritmos\AlgorithmAnalysis\Analisis de Algoritmos\Analisis de Algoritmos\bin\Debug\Analisis de Algoritmos.pdb
-D:\Navy Documents\u\Analis. de Algoritmos\AlgorithmAnalysis\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\Navy Documents\u\Analis. de Algoritmos\AlgorithmAnalysis\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis_de_Algoritmos.MainWindow.resources
-D:\Navy Documents\u\Analis. de Algoritmos\AlgorithmAnalysis\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis_de_Algoritmos.Properties.Resources.resources
-D:\Navy Documents\u\Analis. de Algoritmos\AlgorithmAnalysis\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\GenerateResource.read.1.tlog
-D:\Navy Documents\u\Analis. de Algoritmos\AlgorithmAnalysis\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\GenerateResource.write.1.tlog
-D:\Navy Documents\u\Analis. de Algoritmos\AlgorithmAnalysis\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis de Algoritmos.exe
-D:\Navy Documents\u\Analis. de Algoritmos\AlgorithmAnalysis\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis de Algoritmos.pdb
+C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis de Algoritmos.exe
+C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis de Algoritmos.pdb
+C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\bin\Debug\Analisis de Algoritmos.exe
+C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\bin\Debug\Analisis de Algoritmos.pdb
+C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis_de_Algoritmos.MainWindow.resources
+C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis_de_Algoritmos.Properties.Resources.resources
+C:\Users\L50220\Documentos Naville\U\Analisis de Algoritmos\AlgorithmAnalysis-master\AlgorithmAnalysis-master\Analisis de Algoritmos\Analisis de Algoritmos\obj\x86\Debug\Analisis de Algoritmos.csproj.GenerateResource.Cache

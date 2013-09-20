@@ -145,12 +145,16 @@ namespace Analisis_de_Algoritmos.BL
                             sw.Stop();break;
 
                     case 2:
-                      
-                            SortingArray.Clear();
-                            for (int x = 0; x < cadena.Length; x++)
-                            {
-                                SortingArray.Add(cadena[x]);
-                            }
+
+                        /* SortingArray.Clear();
+                         foreach (String c in cadena)
+                         {
+                             SortingArray.Add(c);
+                         }
+                         for (int x = 0; x < cadena.Length; x++)
+                         {
+                             SortingArray.Add(cadena[x]);
+                         }*/
                             sw.Start();
                             InsertionSort();
                             sw.Stop(); break;
@@ -163,20 +167,20 @@ namespace Analisis_de_Algoritmos.BL
                     case 4:
                             
                            SortingArray.Clear();
-                            for (int x = 0; x < cadena.Length; x++)
-                            {
-                                SortingArray.Add(cadena[x]);
-                            }
+                           foreach (String c in cadena)
+                           {
+                               SortingArray.Add(c);
+                           }
                             sw.Start();
                             QuickSort(SortingArray, 0, SortingArray.Count() - 1);
                             sw.Stop();break;
 
                     case 5:
                            SortingArray.Clear();
-                            for (int x = 0; x < cadena.Length; x++)
-                            {
-                                SortingArray.Add(cadena[x]);
-                            }
+                           foreach (String c in cadena)
+                           {
+                               SortingArray.Add(c);
+                           }
                             sw.Start();
                             sortingArray = Sort(sortingArray);
                             sw.Stop();break;
